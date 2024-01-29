@@ -16,9 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 			return
 		}
 		let window = UIWindow(windowScene: windowScene)
-		let rootVC = OnboardingViewController()
+		let rootVC = AuthenticationService.shared.isAuthorized ? 
+			TabBarController() :
+			NavigationController(rootViewController: OnboardingViewController())
 		
-		window.rootViewController = NavigationController(rootViewController: rootVC)
+		window.rootViewController = rootVC
 		window.makeKeyAndVisible()
 		
 		self.window = window

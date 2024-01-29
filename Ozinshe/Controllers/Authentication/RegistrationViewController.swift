@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class RegistrationViewController: UIViewController {
+final class RegistrationViewController: UIViewController {
 	// MARK: - UI Elements
 	
 	private lazy var titleLabel: UILabel = {
@@ -46,6 +46,9 @@ class RegistrationViewController: UIViewController {
 		textFieldView.title = "Email"
 		textFieldView.placeholder = "Сіздің email"
 		textFieldView.textField.icon = .Icons.email
+		textFieldView.textField.keyboardType = .emailAddress
+		textFieldView.textField.autocapitalizationType = .none
+		textFieldView.textField.textContentType = .emailAddress
 		
 		return textFieldView
 	}()
@@ -57,6 +60,8 @@ class RegistrationViewController: UIViewController {
 		textFieldView.placeholder = "Сіздің құпия сөзіңіз"
 		textFieldView.textField.icon = .Icons.password
 		textFieldView.textField.isSecureTextEntry = true
+		textFieldView.textField.autocapitalizationType = .none
+		textFieldView.textField.textContentType = .newPassword
 		
 		return textFieldView
 	}()
@@ -68,6 +73,8 @@ class RegistrationViewController: UIViewController {
 		textFieldView.placeholder = "Сіздің құпия сөзіңіз"
 		textFieldView.textField.icon = .Icons.password
 		textFieldView.textField.isSecureTextEntry = true
+		textFieldView.textField.autocapitalizationType = .none
+		textFieldView.textField.textContentType = .newPassword
 		
 		return textFieldView
 	}()
@@ -164,6 +171,18 @@ extension RegistrationViewController {
 extension RegistrationViewController {
 	@objc
 	private func register() {
+		showTabBar()
+	}
+	
+	private func showTabBar() {
+		guard let window = view.window else {
+			return
+		}
+	
+		let tabBarController = TabBarController()
 		
+		window.rootViewController = tabBarController
+		
+		UIView.transition(with: window, duration: 1.0, options: .transitionFlipFromRight, animations: nil)
 	}
 }

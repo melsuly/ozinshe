@@ -30,6 +30,13 @@
 		18EAC98A2B67CED700982741 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9892B67CED700982741 /* TextFieldView.swift */; };
 		18EAC98C2B67D6B800982741 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC98B2B67D6B800982741 /* UIStackView+Extension.swift */; };
 		18EAC98E2B67DE3300982741 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC98D2B67DE3300982741 /* RegistrationViewController.swift */; };
+		18EAC9902B680DD600982741 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC98F2B680DD600982741 /* TabBarController.swift */; };
+		18EAC9932B680E1C00982741 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9922B680E1C00982741 /* ProfileViewController.swift */; };
+		18EAC9962B680E3300982741 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9952B680E3300982741 /* FavoritesViewController.swift */; };
+		18EAC9992B680E4B00982741 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9982B680E4B00982741 /* SearchViewController.swift */; };
+		18EAC99C2B680E6600982741 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC99B2B680E6600982741 /* HomeViewController.swift */; };
+		18EAC9A12B682E1400982741 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9A02B682E1400982741 /* AuthenticationService.swift */; };
+		18EAC9A32B68306300982741 /* LogoutModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9A22B68306300982741 /* LogoutModalViewController.swift */; };
 		81EE3357B4867D9188B80C83 /* Pods_Ozinshe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6E3E051D81757F924EF4A2 /* Pods_Ozinshe.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +66,13 @@
 		18EAC9892B67CED700982741 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		18EAC98B2B67D6B800982741 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		18EAC98D2B67DE3300982741 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		18EAC98F2B680DD600982741 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		18EAC9922B680E1C00982741 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		18EAC9952B680E3300982741 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		18EAC9982B680E4B00982741 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		18EAC99B2B680E6600982741 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18EAC9A02B682E1400982741 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		18EAC9A22B68306300982741 /* LogoutModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutModalViewController.swift; sourceTree = "<group>"; };
 		1EF6335EF333F177CEBB4514 /* Pods-Ozinshe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ozinshe.release.xcconfig"; path = "Target Support Files/Pods-Ozinshe/Pods-Ozinshe.release.xcconfig"; sourceTree = "<group>"; };
 		7E6E3E051D81757F924EF4A2 /* Pods_Ozinshe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ozinshe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C885B44E76413FB8023239 /* Pods-Ozinshe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ozinshe.debug.xcconfig"; path = "Target Support Files/Pods-Ozinshe/Pods-Ozinshe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +113,7 @@
 			children = (
 				18EAC9612B67959700982741 /* Application */,
 				18EAC9622B6795C200982741 /* Resources */,
+				18EAC99F2B682E0200982741 /* Services */,
 				18EAC96A2B679A4000982741 /* Protocols */,
 				18EAC96D2B679B2500982741 /* Extensions */,
 				18EAC9672B67983000982741 /* Models */,
@@ -131,9 +146,14 @@
 		18EAC9632B6797A900982741 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18EAC99A2B680E5D00982741 /* Home */,
+				18EAC9972B680E4200982741 /* Search */,
+				18EAC9942B680E2700982741 /* Favorites */,
+				18EAC9912B680E1300982741 /* Profile */,
 				18EAC9822B67C47F00982741 /* Authentication */,
 				18EAC9642B6797B700982741 /* Onboarding */,
 				18EAC9852B67C4C300982741 /* NavigationController.swift */,
+				18EAC98F2B680DD600982741 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +223,47 @@
 				18EAC98D2B67DE3300982741 /* RegistrationViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		18EAC9912B680E1300982741 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				18EAC9922B680E1C00982741 /* ProfileViewController.swift */,
+				18EAC9A22B68306300982741 /* LogoutModalViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		18EAC9942B680E2700982741 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				18EAC9952B680E3300982741 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		18EAC9972B680E4200982741 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				18EAC9982B680E4B00982741 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		18EAC99A2B680E5D00982741 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18EAC99B2B680E6600982741 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18EAC99F2B682E0200982741 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				18EAC9A02B682E1400982741 /* AuthenticationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		9C419BC0FC9EEA691F5640BA /* Frameworks */ = {
@@ -346,11 +407,18 @@
 				18EAC9522B6794F200982741 /* OnboardingViewController.swift in Sources */,
 				18EAC9882B67CACC00982741 /* TextField.swift in Sources */,
 				18EAC97C2B679E6800982741 /* UIView+Extension.swift in Sources */,
+				18EAC99C2B680E6600982741 /* HomeViewController.swift in Sources */,
 				18EAC94E2B6794F200982741 /* AppDelegate.swift in Sources */,
+				18EAC9932B680E1C00982741 /* ProfileViewController.swift in Sources */,
+				18EAC9902B680DD600982741 /* TabBarController.swift in Sources */,
 				18EAC97F2B67B85200982741 /* BaseButton.swift in Sources */,
 				18EAC9812B67C05500982741 /* NSObject+Extension.swift in Sources */,
+				18EAC9992B680E4B00982741 /* SearchViewController.swift in Sources */,
+				18EAC9962B680E3300982741 /* FavoritesViewController.swift in Sources */,
+				18EAC9A32B68306300982741 /* LogoutModalViewController.swift in Sources */,
 				18EAC98C2B67D6B800982741 /* UIStackView+Extension.swift in Sources */,
 				18EAC98A2B67CED700982741 /* TextFieldView.swift in Sources */,
+				18EAC9A12B682E1400982741 /* AuthenticationService.swift in Sources */,
 				18EAC98E2B67DE3300982741 /* RegistrationViewController.swift in Sources */,
 				18EAC96C2B679A4000982741 /* ReusableCell.swift in Sources */,
 				18EAC9692B67983B00982741 /* OnboardingItem.swift in Sources */,

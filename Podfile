@@ -5,6 +5,11 @@ target 'Ozinshe' do
     pod 'SnapKit'
 		pod 'AdvancedPageControl'
 		pod 'IQKeyboardManagerSwift'
+		pod 'SVProgressHUD'
+		pod 'Alamofire'
+		pod 'SwiftyJSON'
+		pod 'KeychainSwift'
+		pod 'PanModal'
 end
 
 post_install do |installer|

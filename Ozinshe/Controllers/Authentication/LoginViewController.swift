@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import SVProgressHUD
+import Alamofire
+import SwiftyJSON
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 	// MARK: - UI Elements
 	
 	private lazy var titleLabel: UILabel = {
@@ -46,6 +49,9 @@ class LoginViewController: UIViewController {
 		textFieldView.title = "Email"
 		textFieldView.placeholder = "Сіздің email"
 		textFieldView.textField.icon = .Icons.email
+		textFieldView.textField.keyboardType = .emailAddress
+		textFieldView.textField.autocapitalizationType = .none
+		textFieldView.textField.textContentType = .emailAddress
 		
 		return textFieldView
 	}()
@@ -57,6 +63,8 @@ class LoginViewController: UIViewController {
 		textFieldView.placeholder = "Сіздің құпия сөзіңіз"
 		textFieldView.textField.icon = .Icons.password
 		textFieldView.textField.isSecureTextEntry = true
+		textFieldView.textField.autocapitalizationType = .none
+		textFieldView.textField.textContentType = .password
 		
 		return textFieldView
 	}()
@@ -166,7 +174,44 @@ extension LoginViewController {
 extension LoginViewController {
 	@objc
 	private func login() {
-		emailTextFieldView.error = "Қате формат"
+		guard let email = emailTextFieldView.textField.text,
+			  !email.isEmpty else {
+			emailTextFieldView.error = "Қате формат"
+			return
+		}
+		
+		guard let password = passwordTextFieldView.textField.text,
+			  !password.isEmpty else {
+			passwordTextFieldView.error = "Қате формат"
+			return
+		}
+		
+		SVProgressHUD.show(withStatus: "Жүктеу...")
+		
+		AF.request(
+			"http://api.ozinshe.com/auth/V1/signin",
+			method: .post,
+			parameters: [
+				"email": email,
+				"password": password
+			],
+			encoding: JSONEncoding.default
+		).responseData { response in
+			switch response.result {
+				case .success(let data):
+					let json = JSON(data)
+					
+					if let accessToken = json["accessToken"].string {
+						AuthenticationService.shared.token = accessToken
+						self.showTabBar()
+					} else {
+						SVProgressHUD.showError(withStatus: "Қате!")
+					}
+				case .failure(let error):
+					SVProgressHUD.showError(withStatus: error.localizedDescription)
+			}
+		}
+		
 	}
 	
 	@objc
@@ -174,5 +219,17 @@ extension LoginViewController {
 		let registrationVC = RegistrationViewController()
 		
 		navigationController?.pushViewController(registrationVC, animated: true)
+	}
+	
+	private func showTabBar() {
+		guard let window = view.window else {
+			return
+		}
+	
+		let tabBarController = TabBarController()
+		
+		window.rootViewController = tabBarController
+		
+		UIView.transition(with: window, duration: 1.0, options: .transitionFlipFromRight, animations: nil)
 	}
 }
