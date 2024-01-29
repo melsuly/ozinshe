@@ -1,20 +1,24 @@
 PODS:
   - AdvancedPageControl (0.9.0)
+  - IQKeyboardManagerSwift (7.0.1)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - AdvancedPageControl
+  - IQKeyboardManagerSwift
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - AdvancedPageControl
+    - IQKeyboardManagerSwift
     - SnapKit
 
 SPEC CHECKSUMS:
   AdvancedPageControl: 39e3b32b00b2d324c534f8e17cc6c5be9abe84b7
+  IQKeyboardManagerSwift: 7f6b1b1d1497855d2beea7f2f10ffcc6978525b1
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 46afffaa84d11a08d1da5d115dc28b90a4369a11
+PODFILE CHECKSUM: 3de2851184285335184a2451d1c63350134b8884
 
 COCOAPODS: 1.14.3

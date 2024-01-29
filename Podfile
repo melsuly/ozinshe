@@ -4,6 +4,7 @@ use_frameworks!
 target 'Ozinshe' do
     pod 'SnapKit'
 		pod 'AdvancedPageControl'
+		pod 'IQKeyboardManagerSwift'
 end
 
 post_install do |installer|

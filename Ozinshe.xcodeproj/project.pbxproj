@@ -24,6 +24,12 @@
 		18EAC97C2B679E6800982741 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC97B2B679E6800982741 /* UIView+Extension.swift */; };
 		18EAC97F2B67B85200982741 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC97E2B67B85200982741 /* BaseButton.swift */; };
 		18EAC9812B67C05500982741 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9802B67C05500982741 /* NSObject+Extension.swift */; };
+		18EAC9842B67C48D00982741 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9832B67C48D00982741 /* LoginViewController.swift */; };
+		18EAC9862B67C4C300982741 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9852B67C4C300982741 /* NavigationController.swift */; };
+		18EAC9882B67CACC00982741 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9872B67CACC00982741 /* TextField.swift */; };
+		18EAC98A2B67CED700982741 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9892B67CED700982741 /* TextFieldView.swift */; };
+		18EAC98C2B67D6B800982741 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC98B2B67D6B800982741 /* UIStackView+Extension.swift */; };
+		18EAC98E2B67DE3300982741 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC98D2B67DE3300982741 /* RegistrationViewController.swift */; };
 		81EE3357B4867D9188B80C83 /* Pods_Ozinshe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6E3E051D81757F924EF4A2 /* Pods_Ozinshe.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +53,12 @@
 		18EAC97B2B679E6800982741 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		18EAC97E2B67B85200982741 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		18EAC9802B67C05500982741 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		18EAC9832B67C48D00982741 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		18EAC9852B67C4C300982741 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		18EAC9872B67CACC00982741 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		18EAC9892B67CED700982741 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		18EAC98B2B67D6B800982741 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		18EAC98D2B67DE3300982741 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		1EF6335EF333F177CEBB4514 /* Pods-Ozinshe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ozinshe.release.xcconfig"; path = "Target Support Files/Pods-Ozinshe/Pods-Ozinshe.release.xcconfig"; sourceTree = "<group>"; };
 		7E6E3E051D81757F924EF4A2 /* Pods_Ozinshe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ozinshe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C885B44E76413FB8023239 /* Pods-Ozinshe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ozinshe.debug.xcconfig"; path = "Target Support Files/Pods-Ozinshe/Pods-Ozinshe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +131,9 @@
 		18EAC9632B6797A900982741 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18EAC9822B67C47F00982741 /* Authentication */,
 				18EAC9642B6797B700982741 /* Onboarding */,
+				18EAC9852B67C4C300982741 /* NavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +169,7 @@
 				18EAC9792B679B9500982741 /* UIFont+Extension.swift */,
 				18EAC97B2B679E6800982741 /* UIView+Extension.swift */,
 				18EAC9802B67C05500982741 /* NSObject+Extension.swift */,
+				18EAC98B2B67D6B800982741 /* UIStackView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,8 +190,19 @@
 			isa = PBXGroup;
 			children = (
 				18EAC97E2B67B85200982741 /* BaseButton.swift */,
+				18EAC9872B67CACC00982741 /* TextField.swift */,
+				18EAC9892B67CED700982741 /* TextFieldView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		18EAC9822B67C47F00982741 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				18EAC9832B67C48D00982741 /* LoginViewController.swift */,
+				18EAC98D2B67DE3300982741 /* RegistrationViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		9C419BC0FC9EEA691F5640BA /* Frameworks */ = {
@@ -316,15 +342,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EAC97A2B679B9500982741 /* UIFont+Extension.swift in Sources */,
+				18EAC9862B67C4C300982741 /* NavigationController.swift in Sources */,
 				18EAC9522B6794F200982741 /* OnboardingViewController.swift in Sources */,
+				18EAC9882B67CACC00982741 /* TextField.swift in Sources */,
 				18EAC97C2B679E6800982741 /* UIView+Extension.swift in Sources */,
 				18EAC94E2B6794F200982741 /* AppDelegate.swift in Sources */,
 				18EAC97F2B67B85200982741 /* BaseButton.swift in Sources */,
 				18EAC9812B67C05500982741 /* NSObject+Extension.swift in Sources */,
+				18EAC98C2B67D6B800982741 /* UIStackView+Extension.swift in Sources */,
+				18EAC98A2B67CED700982741 /* TextFieldView.swift in Sources */,
+				18EAC98E2B67DE3300982741 /* RegistrationViewController.swift in Sources */,
 				18EAC96C2B679A4000982741 /* ReusableCell.swift in Sources */,
 				18EAC9692B67983B00982741 /* OnboardingItem.swift in Sources */,
 				18EAC9662B6797C500982741 /* OnboardingCell.swift in Sources */,
 				18EAC9502B6794F200982741 /* SceneDelegate.swift in Sources */,
+				18EAC9842B67C48D00982741 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

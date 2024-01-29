@@ -191,6 +191,8 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
 extension OnboardingViewController {
 	@objc
 	private func navigateToLogin() {
-		print("Skip")
+		let loginVC = LoginViewController()
+		
+		navigationController?.pushViewController(loginVC, animated: true)
 	}
 }
