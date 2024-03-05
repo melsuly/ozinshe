@@ -12,6 +12,9 @@ import Alamofire
 import SwiftyJSON
 
 final class LoginViewController: UIViewController {
+    
+    weak var coordinator: AuthenticationDelegate?
+    
 	// MARK: - UI Elements
 	
 	private lazy var titleLabel: UILabel = {
@@ -197,6 +200,8 @@ extension LoginViewController {
 			],
 			encoding: JSONEncoding.default
 		).responseData { response in
+            SVProgressHUD.dismiss()
+            
 			switch response.result {
 				case .success(let data):
 					let json = JSON(data)
@@ -216,20 +221,10 @@ extension LoginViewController {
 	
 	@objc
 	private func showRegister() {
-		let registrationVC = RegistrationViewController()
-		
-		navigationController?.pushViewController(registrationVC, animated: true)
-	}
+        coordinator?.showRegistration()
+    }
 	
 	private func showTabBar() {
-		guard let window = view.window else {
-			return
-		}
-	
-		let tabBarController = TabBarController()
-		
-		window.rootViewController = tabBarController
-		
-		UIView.transition(with: window, duration: 1.0, options: .transitionFlipFromRight, animations: nil)
-	}
+        coordinator?.didSuccessfullyAuthenticated()
+    }
 }

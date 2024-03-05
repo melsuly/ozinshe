@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ProfileViewControllerDelegate: AnyObject {
+    func presentLogoutModal()
+}
+
 class ProfileViewController: UIViewController {
+    weak var coordinator: ProfileViewControllerDelegate?
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
@@ -17,7 +23,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController {
 	private func setupViews() {
 		view.backgroundColor = .appBackground
-		(navigationController as? NavigationController)?.setupShadow()
+//		(navigationController as? NavigationController)?.setupShadow()
 		navigationItem.title = "Профиль"
 		navigationItem.rightBarButtonItem = UIBarButtonItem(image: .Icons.logout, style: .plain, target: self, action: #selector(logout))
 	}
@@ -26,8 +32,6 @@ extension ProfileViewController {
 extension ProfileViewController {
 	@objc
 	private func logout() {
-		let logoutModalVC = LogoutModalViewController()
-		
-		presentPanModal(logoutModalVC)
-	}
+        coordinator?.presentLogoutModal()
+    }
 }

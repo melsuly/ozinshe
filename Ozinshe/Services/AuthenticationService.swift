@@ -24,7 +24,7 @@ final class AuthenticationService {
 		}
 	}
 	
-	var isAuthorized: Bool {
+	var isAuthenticated: Bool {
 		!token.isEmpty
 	}
 	

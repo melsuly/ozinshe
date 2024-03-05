@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C549832B97898600AAACE0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549822B97898600AAACE0 /* Coordinator.swift */; };
+		18C549852B9789F600AAACE0 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549842B9789F600AAACE0 /* BaseCoordinator.swift */; };
+		18C549882B97918C00AAACE0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549872B97918C00AAACE0 /* Router.swift */; };
+		18C5498A2B9792B500AAACE0 /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549892B9792B500AAACE0 /* DefaultRouter.swift */; };
+		18C5498C2B97944B00AAACE0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5498B2B97944B00AAACE0 /* NavigationController.swift */; };
+		18C5498E2B9794F300AAACE0 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5498D2B9794F300AAACE0 /* AppCoordinator.swift */; };
+		18C549912B97960F00AAACE0 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549902B97960F00AAACE0 /* OnboardingViewModel.swift */; };
+		18C549932B9796C600AAACE0 /* GuestFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549922B9796C600AAACE0 /* GuestFlowCoordinator.swift */; };
+		18C549972B979E0E00AAACE0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549962B979E0E00AAACE0 /* MainCoordinator.swift */; };
+		18C5499A2B979EE000AAACE0 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549992B979EE000AAACE0 /* HomeCoordinator.swift */; };
+		18C5499C2B97A15700AAACE0 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5499B2B97A15700AAACE0 /* SearchCoordinator.swift */; };
+		18C5499E2B97A16500AAACE0 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5499D2B97A16500AAACE0 /* FavoritesCoordinator.swift */; };
+		18C549A02B97A17500AAACE0 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5499F2B97A17500AAACE0 /* ProfileCoordinator.swift */; };
 		18EAC94E2B6794F200982741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC94D2B6794F200982741 /* AppDelegate.swift */; };
 		18EAC9502B6794F200982741 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC94F2B6794F200982741 /* SceneDelegate.swift */; };
 		18EAC9522B6794F200982741 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9512B6794F200982741 /* OnboardingViewController.swift */; };
@@ -25,12 +38,10 @@
 		18EAC97F2B67B85200982741 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC97E2B67B85200982741 /* BaseButton.swift */; };
 		18EAC9812B67C05500982741 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9802B67C05500982741 /* NSObject+Extension.swift */; };
 		18EAC9842B67C48D00982741 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9832B67C48D00982741 /* LoginViewController.swift */; };
-		18EAC9862B67C4C300982741 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9852B67C4C300982741 /* NavigationController.swift */; };
 		18EAC9882B67CACC00982741 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9872B67CACC00982741 /* TextField.swift */; };
 		18EAC98A2B67CED700982741 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9892B67CED700982741 /* TextFieldView.swift */; };
 		18EAC98C2B67D6B800982741 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC98B2B67D6B800982741 /* UIStackView+Extension.swift */; };
 		18EAC98E2B67DE3300982741 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC98D2B67DE3300982741 /* RegistrationViewController.swift */; };
-		18EAC9902B680DD600982741 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC98F2B680DD600982741 /* TabBarController.swift */; };
 		18EAC9932B680E1C00982741 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9922B680E1C00982741 /* ProfileViewController.swift */; };
 		18EAC9962B680E3300982741 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9952B680E3300982741 /* FavoritesViewController.swift */; };
 		18EAC9992B680E4B00982741 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9982B680E4B00982741 /* SearchViewController.swift */; };
@@ -41,6 +52,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18C549822B97898600AAACE0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		18C549842B9789F600AAACE0 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		18C549872B97918C00AAACE0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		18C549892B9792B500AAACE0 /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
+		18C5498B2B97944B00AAACE0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		18C5498D2B9794F300AAACE0 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		18C549902B97960F00AAACE0 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		18C549922B9796C600AAACE0 /* GuestFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestFlowCoordinator.swift; sourceTree = "<group>"; };
+		18C549962B979E0E00AAACE0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		18C549992B979EE000AAACE0 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		18C5499B2B97A15700AAACE0 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		18C5499D2B97A16500AAACE0 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
+		18C5499F2B97A17500AAACE0 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		18EAC94A2B6794F200982741 /* Ozinshe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ozinshe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EAC94D2B6794F200982741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EAC94F2B6794F200982741 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,12 +85,10 @@
 		18EAC97E2B67B85200982741 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		18EAC9802B67C05500982741 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		18EAC9832B67C48D00982741 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		18EAC9852B67C4C300982741 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		18EAC9872B67CACC00982741 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		18EAC9892B67CED700982741 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		18EAC98B2B67D6B800982741 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		18EAC98D2B67DE3300982741 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		18EAC98F2B680DD600982741 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		18EAC9922B680E1C00982741 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		18EAC9952B680E3300982741 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		18EAC9982B680E4B00982741 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +112,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18C549812B97897C00AAACE0 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				18C549862B97918400AAACE0 /* Router */,
+				18C549822B97898600AAACE0 /* Coordinator.swift */,
+				18C549842B9789F600AAACE0 /* BaseCoordinator.swift */,
+				18C5498D2B9794F300AAACE0 /* AppCoordinator.swift */,
+				18C549922B9796C600AAACE0 /* GuestFlowCoordinator.swift */,
+				18C549982B979ED400AAACE0 /* Main */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		18C549862B97918400AAACE0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				18C549872B97918C00AAACE0 /* Router.swift */,
+				18C549892B9792B500AAACE0 /* DefaultRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		18C5498F2B97960600AAACE0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				18C549902B97960F00AAACE0 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		18C549982B979ED400AAACE0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18C549962B979E0E00AAACE0 /* MainCoordinator.swift */,
+				18C549992B979EE000AAACE0 /* HomeCoordinator.swift */,
+				18C5499B2B97A15700AAACE0 /* SearchCoordinator.swift */,
+				18C5499D2B97A16500AAACE0 /* FavoritesCoordinator.swift */,
+				18C5499F2B97A17500AAACE0 /* ProfileCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		18EAC9412B6794F200982741 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +175,8 @@
 		18EAC94C2B6794F200982741 /* Ozinshe */ = {
 			isa = PBXGroup;
 			children = (
+				18C5498F2B97960600AAACE0 /* ViewModels */,
+				18C549812B97897C00AAACE0 /* Coordinators */,
 				18EAC9612B67959700982741 /* Application */,
 				18EAC9622B6795C200982741 /* Resources */,
 				18EAC99F2B682E0200982741 /* Services */,
@@ -152,8 +218,6 @@
 				18EAC9912B680E1300982741 /* Profile */,
 				18EAC9822B67C47F00982741 /* Authentication */,
 				18EAC9642B6797B700982741 /* Onboarding */,
-				18EAC9852B67C4C300982741 /* NavigationController.swift */,
-				18EAC98F2B680DD600982741 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				18EAC96B2B679A4000982741 /* ReusableCell.swift */,
+				18C5498B2B97944B00AAACE0 /* NavigationController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -403,27 +468,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EAC97A2B679B9500982741 /* UIFont+Extension.swift in Sources */,
-				18EAC9862B67C4C300982741 /* NavigationController.swift in Sources */,
 				18EAC9522B6794F200982741 /* OnboardingViewController.swift in Sources */,
 				18EAC9882B67CACC00982741 /* TextField.swift in Sources */,
 				18EAC97C2B679E6800982741 /* UIView+Extension.swift in Sources */,
+				18C5498C2B97944B00AAACE0 /* NavigationController.swift in Sources */,
 				18EAC99C2B680E6600982741 /* HomeViewController.swift in Sources */,
 				18EAC94E2B6794F200982741 /* AppDelegate.swift in Sources */,
 				18EAC9932B680E1C00982741 /* ProfileViewController.swift in Sources */,
-				18EAC9902B680DD600982741 /* TabBarController.swift in Sources */,
+				18C549A02B97A17500AAACE0 /* ProfileCoordinator.swift in Sources */,
+				18C549832B97898600AAACE0 /* Coordinator.swift in Sources */,
 				18EAC97F2B67B85200982741 /* BaseButton.swift in Sources */,
+				18C5498A2B9792B500AAACE0 /* DefaultRouter.swift in Sources */,
 				18EAC9812B67C05500982741 /* NSObject+Extension.swift in Sources */,
+				18C5499C2B97A15700AAACE0 /* SearchCoordinator.swift in Sources */,
+				18C549882B97918C00AAACE0 /* Router.swift in Sources */,
 				18EAC9992B680E4B00982741 /* SearchViewController.swift in Sources */,
 				18EAC9962B680E3300982741 /* FavoritesViewController.swift in Sources */,
+				18C549912B97960F00AAACE0 /* OnboardingViewModel.swift in Sources */,
 				18EAC9A32B68306300982741 /* LogoutModalViewController.swift in Sources */,
+				18C549852B9789F600AAACE0 /* BaseCoordinator.swift in Sources */,
+				18C549932B9796C600AAACE0 /* GuestFlowCoordinator.swift in Sources */,
+				18C549972B979E0E00AAACE0 /* MainCoordinator.swift in Sources */,
 				18EAC98C2B67D6B800982741 /* UIStackView+Extension.swift in Sources */,
 				18EAC98A2B67CED700982741 /* TextFieldView.swift in Sources */,
+				18C5498E2B9794F300AAACE0 /* AppCoordinator.swift in Sources */,
 				18EAC9A12B682E1400982741 /* AuthenticationService.swift in Sources */,
 				18EAC98E2B67DE3300982741 /* RegistrationViewController.swift in Sources */,
 				18EAC96C2B679A4000982741 /* ReusableCell.swift in Sources */,
 				18EAC9692B67983B00982741 /* OnboardingItem.swift in Sources */,
 				18EAC9662B6797C500982741 /* OnboardingCell.swift in Sources */,
+				18C5499A2B979EE000AAACE0 /* HomeCoordinator.swift in Sources */,
 				18EAC9502B6794F200982741 /* SceneDelegate.swift in Sources */,
+				18C5499E2B97A16500AAACE0 /* FavoritesCoordinator.swift in Sources */,
 				18EAC9842B67C48D00982741 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

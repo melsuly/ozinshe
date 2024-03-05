@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 final class RegistrationViewController: UIViewController {
+    weak var coordinator: AuthenticationDelegate?
+    
 	// MARK: - UI Elements
 	
 	private lazy var titleLabel: UILabel = {
@@ -171,18 +173,10 @@ extension RegistrationViewController {
 extension RegistrationViewController {
 	@objc
 	private func register() {
-		showTabBar()
+		// TODO: Add register API
 	}
 	
 	private func showTabBar() {
-		guard let window = view.window else {
-			return
-		}
-	
-		let tabBarController = TabBarController()
-		
-		window.rootViewController = tabBarController
-		
-		UIView.transition(with: window, duration: 1.0, options: .transitionFlipFromRight, animations: nil)
-	}
+        coordinator?.didSuccessfullyAuthenticated()
+    }
 }

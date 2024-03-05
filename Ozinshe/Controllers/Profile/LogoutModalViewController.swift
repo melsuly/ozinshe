@@ -9,10 +9,16 @@ import UIKit
 import SnapKit
 import PanModal
 
+protocol LogoutModalViewControllerDelegate: AnyObject {
+    func userDidLogout()
+}
+
 final class LogoutModalViewController: UIViewController, PanModalPresentable {
 	
 	// MARK: - Properties
 	
+    weak var delegate: LogoutModalViewControllerDelegate?
+    
 	var panModalBackgroundColor: UIColor = .Modal.background
 	var cornerRadius: CGFloat = 32
 	var showDragIndicator: Bool = false
@@ -125,16 +131,8 @@ extension LogoutModalViewController {
 extension LogoutModalViewController {
 	@objc
 	private func logout() {
-		guard let window = view.window else {
-			return
-		}
-		let rootVC = NavigationController(rootViewController: OnboardingViewController())
-		
-		AuthenticationService.shared.token = ""
-		window.rootViewController = rootVC
-		
-		UIView.transition(with: window, duration: 1.0, options: .transitionFlipFromRight, animations: nil)
-	}
+        delegate?.userDidLogout()
+    }
 	
 	@objc
 	private func cancel() {

@@ -11,6 +11,9 @@ import AdvancedPageControl
 
 final class OnboardingViewController: UIViewController {
 	
+    var viewModel: OnboardingViewModel
+    weak var coordinator: AuthenticationDelegate?
+    
 	private let items: [OnboardingItem] = [
 		OnboardingItem(
 			title: "ÖZINŞE-ге қош келдің!",
@@ -108,6 +111,15 @@ final class OnboardingViewController: UIViewController {
 		return button
 	}()
 	
+    init(viewModel: OnboardingViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
@@ -191,8 +203,6 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
 extension OnboardingViewController {
 	@objc
 	private func navigateToLogin() {
-		let loginVC = LoginViewController()
-		
-		navigationController?.pushViewController(loginVC, animated: true)
-	}
+        coordinator?.showLogin()
+    }
 }
