@@ -61,7 +61,7 @@ final class OnboardingCell: UICollectionViewCell, ReusableCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func setData(withItem item: OnboardingItem) {
+	func configure(for item: OnboardingItem) {
 		backgroundImageView.image = item.image
 		titleLabel.text = item.title
 		subtitleLabel.attributedText = NSAttributedString(string: item.subtitle, attributes: [

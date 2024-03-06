@@ -20,6 +20,11 @@
 		18C5499C2B97A15700AAACE0 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5499B2B97A15700AAACE0 /* SearchCoordinator.swift */; };
 		18C5499E2B97A16500AAACE0 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5499D2B97A16500AAACE0 /* FavoritesCoordinator.swift */; };
 		18C549A02B97A17500AAACE0 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5499F2B97A17500AAACE0 /* ProfileCoordinator.swift */; };
+		18C549A32B983CC200AAACE0 /* DependencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549A22B983CC200AAACE0 /* DependencyHelper.swift */; };
+		18C549A52B983E3C00AAACE0 /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549A42B983E3C00AAACE0 /* AuthenticationDelegate.swift */; };
+		18C549A82B983E9400AAACE0 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549A72B983E9400AAACE0 /* AlamofireNetworkService.swift */; };
+		18C549AA2B983EA800AAACE0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549A92B983EA800AAACE0 /* NetworkService.swift */; };
+		18C549AC2B9841B100AAACE0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C549AB2B9841B100AAACE0 /* Endpoints.swift */; };
 		18EAC94E2B6794F200982741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC94D2B6794F200982741 /* AppDelegate.swift */; };
 		18EAC9502B6794F200982741 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC94F2B6794F200982741 /* SceneDelegate.swift */; };
 		18EAC9522B6794F200982741 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAC9512B6794F200982741 /* OnboardingViewController.swift */; };
@@ -65,6 +70,11 @@
 		18C5499B2B97A15700AAACE0 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		18C5499D2B97A16500AAACE0 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		18C5499F2B97A17500AAACE0 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		18C549A22B983CC200AAACE0 /* DependencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyHelper.swift; sourceTree = "<group>"; };
+		18C549A42B983E3C00AAACE0 /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
+		18C549A72B983E9400AAACE0 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
+		18C549A92B983EA800AAACE0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		18C549AB2B9841B100AAACE0 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		18EAC94A2B6794F200982741 /* Ozinshe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ozinshe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EAC94D2B6794F200982741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EAC94F2B6794F200982741 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,17 +122,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18C549812B97897C00AAACE0 /* Coordinators */ = {
+		18C549812B97897C00AAACE0 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				18C549A12B983B6400AAACE0 /* Coordinator */,
 				18C549862B97918400AAACE0 /* Router */,
-				18C549822B97898600AAACE0 /* Coordinator.swift */,
-				18C549842B9789F600AAACE0 /* BaseCoordinator.swift */,
-				18C5498D2B9794F300AAACE0 /* AppCoordinator.swift */,
-				18C549922B9796C600AAACE0 /* GuestFlowCoordinator.swift */,
-				18C549982B979ED400AAACE0 /* Main */,
 			);
-			path = Coordinators;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		18C549862B97918400AAACE0 /* Router */ = {
@@ -154,6 +160,37 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		18C549A12B983B6400AAACE0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				18C549A62B983E4F00AAACE0 /* Guest */,
+				18C549982B979ED400AAACE0 /* Main */,
+				18C549822B97898600AAACE0 /* Coordinator.swift */,
+				18C549842B9789F600AAACE0 /* BaseCoordinator.swift */,
+				18C5498D2B9794F300AAACE0 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		18C549A62B983E4F00AAACE0 /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				18C549922B9796C600AAACE0 /* GuestFlowCoordinator.swift */,
+				18C549A42B983E3C00AAACE0 /* AuthenticationDelegate.swift */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		18C549AD2B9846FC00AAACE0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				18C549AB2B9841B100AAACE0 /* Endpoints.swift */,
+				18C549A92B983EA800AAACE0 /* NetworkService.swift */,
+				18C549A72B983E9400AAACE0 /* AlamofireNetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		18EAC9412B6794F200982741 = {
 			isa = PBXGroup;
 			children = (
@@ -175,14 +212,15 @@
 		18EAC94C2B6794F200982741 /* Ozinshe */ = {
 			isa = PBXGroup;
 			children = (
-				18C5498F2B97960600AAACE0 /* ViewModels */,
-				18C549812B97897C00AAACE0 /* Coordinators */,
 				18EAC9612B67959700982741 /* Application */,
 				18EAC9622B6795C200982741 /* Resources */,
+				18C549812B97897C00AAACE0 /* Navigation */,
 				18EAC99F2B682E0200982741 /* Services */,
+				18C549AD2B9846FC00AAACE0 /* Networking */,
 				18EAC96A2B679A4000982741 /* Protocols */,
 				18EAC96D2B679B2500982741 /* Extensions */,
 				18EAC9672B67983000982741 /* Models */,
+				18C5498F2B97960600AAACE0 /* ViewModels */,
 				18EAC9632B6797A900982741 /* Controllers */,
 				18EAC97D2B67B84600982741 /* Components */,
 				18EAC95B2B6794F300982741 /* Info.plist */,
@@ -195,6 +233,7 @@
 			children = (
 				18EAC94D2B6794F200982741 /* AppDelegate.swift */,
 				18EAC94F2B6794F200982741 /* SceneDelegate.swift */,
+				18C549A22B983CC200AAACE0 /* DependencyHelper.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -481,8 +520,10 @@
 				18C5498A2B9792B500AAACE0 /* DefaultRouter.swift in Sources */,
 				18EAC9812B67C05500982741 /* NSObject+Extension.swift in Sources */,
 				18C5499C2B97A15700AAACE0 /* SearchCoordinator.swift in Sources */,
+				18C549A52B983E3C00AAACE0 /* AuthenticationDelegate.swift in Sources */,
 				18C549882B97918C00AAACE0 /* Router.swift in Sources */,
 				18EAC9992B680E4B00982741 /* SearchViewController.swift in Sources */,
+				18C549A32B983CC200AAACE0 /* DependencyHelper.swift in Sources */,
 				18EAC9962B680E3300982741 /* FavoritesViewController.swift in Sources */,
 				18C549912B97960F00AAACE0 /* OnboardingViewModel.swift in Sources */,
 				18EAC9A32B68306300982741 /* LogoutModalViewController.swift in Sources */,
@@ -490,14 +531,17 @@
 				18C549932B9796C600AAACE0 /* GuestFlowCoordinator.swift in Sources */,
 				18C549972B979E0E00AAACE0 /* MainCoordinator.swift in Sources */,
 				18EAC98C2B67D6B800982741 /* UIStackView+Extension.swift in Sources */,
+				18C549A82B983E9400AAACE0 /* AlamofireNetworkService.swift in Sources */,
 				18EAC98A2B67CED700982741 /* TextFieldView.swift in Sources */,
 				18C5498E2B9794F300AAACE0 /* AppCoordinator.swift in Sources */,
+				18C549AC2B9841B100AAACE0 /* Endpoints.swift in Sources */,
 				18EAC9A12B682E1400982741 /* AuthenticationService.swift in Sources */,
 				18EAC98E2B67DE3300982741 /* RegistrationViewController.swift in Sources */,
 				18EAC96C2B679A4000982741 /* ReusableCell.swift in Sources */,
 				18EAC9692B67983B00982741 /* OnboardingItem.swift in Sources */,
 				18EAC9662B6797C500982741 /* OnboardingCell.swift in Sources */,
 				18C5499A2B979EE000AAACE0 /* HomeCoordinator.swift in Sources */,
+				18C549AA2B983EA800AAACE0 /* NetworkService.swift in Sources */,
 				18EAC9502B6794F200982741 /* SceneDelegate.swift in Sources */,
 				18C5499E2B97A16500AAACE0 /* FavoritesCoordinator.swift in Sources */,
 				18EAC9842B67C48D00982741 /* LoginViewController.swift in Sources */,

@@ -11,6 +11,15 @@ import SVProgressHUD
 import Alamofire
 import SwiftyJSON
 
+struct LoginRequest: Encodable {
+    let email: String
+    let password: String
+}
+
+struct LoginResponse: Decodable {
+    let accessToken: String
+}
+
 final class LoginViewController: UIViewController {
     
     weak var coordinator: AuthenticationDelegate?
@@ -188,35 +197,26 @@ extension LoginViewController {
 			passwordTextFieldView.error = "Қате формат"
 			return
 		}
+        
+        let parameters = [
+            "email": email,
+            "password": password
+        ]
 		
 		SVProgressHUD.show(withStatus: "Жүктеу...")
 		
-		AF.request(
-			"http://api.ozinshe.com/auth/V1/signin",
-			method: .post,
-			parameters: [
-				"email": email,
-				"password": password
-			],
-			encoding: JSONEncoding.default
-		).responseData { response in
+        let networkingService = DependencyHelper.shared.resolve(NetworkingService.self)!
+        
+        networkingService.fetch(endpoint: .login(parameters)) { (result: Result<LoginResponse, Error>) in
             SVProgressHUD.dismiss()
-            
-			switch response.result {
-				case .success(let data):
-					let json = JSON(data)
-					
-					if let accessToken = json["accessToken"].string {
-						AuthenticationService.shared.token = accessToken
-						self.showTabBar()
-					} else {
-						SVProgressHUD.showError(withStatus: "Қате!")
-					}
-				case .failure(let error):
-					SVProgressHUD.showError(withStatus: error.localizedDescription)
-			}
-		}
-		
+            switch result {
+                case .success(let data):
+                    AuthenticationService.shared.token = data.accessToken
+                    self.showTabBar()
+                case .failure(let error):
+                    SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        }
 	}
 	
 	@objc

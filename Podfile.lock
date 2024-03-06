@@ -9,6 +9,7 @@ PODS:
     - SVProgressHUD/Core (= 2.3.1)
   - SVProgressHUD/Core (2.3.1)
   - SwiftyJSON (5.0.1)
+  - Swinject (2.8.3)
 
 DEPENDENCIES:
   - AdvancedPageControl
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
+  - Swinject
 
 SPEC REPOS:
   trunk:
@@ -30,6 +32,7 @@ SPEC REPOS:
     - SnapKit
     - SVProgressHUD
     - SwiftyJSON
+    - Swinject
 
 SPEC CHECKSUMS:
   AdvancedPageControl: 39e3b32b00b2d324c534f8e17cc6c5be9abe84b7
@@ -40,7 +43,8 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  Swinject: 893c9a543000ac2f10ee4cbaf0933c6992c935d5
 
-PODFILE CHECKSUM: 54e1702b1634a7080c3f2f20a3bbf28e619c8eb1
+PODFILE CHECKSUM: d63e65c38b995efda10cfc25bad5e53ef847dc2a
 
 COCOAPODS: 1.14.3

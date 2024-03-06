@@ -11,12 +11,6 @@ protocol GuestFlowCoordinatorDelegate: AnyObject {
     func didFinishFlow(from coordinator: GuestFlowCoordinator)
 }
 
-protocol AuthenticationDelegate: AnyObject {
-    func didSuccessfullyAuthenticated()
-    func showRegistration()
-    func showLogin()
-}
-
 class GuestFlowCoordinator: BaseCoordinator, AuthenticationDelegate {
     
     weak var parentCoordinator: GuestFlowCoordinatorDelegate?
@@ -26,7 +20,7 @@ class GuestFlowCoordinator: BaseCoordinator, AuthenticationDelegate {
     }
     
     func showOnboarding() {
-        let onboardingViewModel = OnboardingViewModel()
+        let onboardingViewModel = DependencyHelper.shared.resolve(OnboardingViewModel.self)!
         let onboardingVC = OnboardingViewController(viewModel: onboardingViewModel)
         onboardingVC.coordinator = self
         router.setRootViewController(onboardingVC, hideBar: true, animated: false)

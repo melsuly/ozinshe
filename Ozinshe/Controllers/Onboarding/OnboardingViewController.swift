@@ -7,53 +7,35 @@
 
 import UIKit
 import SnapKit
+import Combine
 import AdvancedPageControl
 
-final class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 	
+    // MARK: - Properties
+    
     var viewModel: OnboardingViewModel
     weak var coordinator: AuthenticationDelegate?
-    
-	private let items: [OnboardingItem] = [
-		OnboardingItem(
-			title: "ÖZINŞE-ге қош келдің!",
-			subtitle: "Фильмдер, телехикаялар, ситкомдар, анимациялық жобалар, телебағдарламалар мен реалити-шоулар, аниме және тағы басқалары",
-			image: .Onboarding.slide1
-		),
-		OnboardingItem(
-			title: "ÖZINŞE-ге қош келдің!", 
-			subtitle: "Кез келген құрылғыдан қара\nСүйікті фильміңді  қосымша төлемсіз телефоннан, планшеттен, ноутбуктан қара",
-			image: .Onboarding.slide2
-		),
-		OnboardingItem(
-			title: "ÖZINŞE-ге қош келдің!",
-			subtitle: "Тіркелу оңай. Қазір тіркел де қалаған фильміңе қол жеткіз",
-			image: .Onboarding.slide3
-		),
-	]
+    private var cancellables = Set<AnyCancellable>()
 	
 	// MARK: - UI Elements
 	
 	private lazy var collectionView: UICollectionView = {
 		let layout = UICollectionViewFlowLayout()
-		
 		layout.scrollDirection = .horizontal
 		layout.minimumLineSpacing = 0
 		layout.minimumInteritemSpacing = 0
 		layout.itemSize = view.bounds.size
-		
-		let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-		
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		collectionView.dataSource = self
 		collectionView.delegate = self
-		
 		collectionView.contentInsetAdjustmentBehavior = .never
 		collectionView.isPagingEnabled = true
 		collectionView.bounces = false
 		collectionView.showsHorizontalScrollIndicator = false
-		
 		collectionView.register(cellType: OnboardingCell.self)
-		
+        
 		return collectionView
 	}()
 	
@@ -61,7 +43,7 @@ final class OnboardingViewController: UIViewController {
 		let pageControl = AdvancedPageControlView()
 		
 		pageControl.drawer = ExtendedDotDrawer(
-			numberOfPages: items.count,
+            numberOfPages: viewModel.itemsCount(),
 			height: 6,
 			width: 6,
 			space: 4,
@@ -76,11 +58,9 @@ final class OnboardingViewController: UIViewController {
 	
 	private lazy var skipButton: UIButton = {
 		var configuration = UIButton.Configuration.plain()
-		
 		configuration.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16)
-		
+        
 		let button = BaseButton(configuration: configuration)
-	
 		button.setAttributedTitle(
 			NSAttributedString(
 				string: "Өткізу",
@@ -90,7 +70,6 @@ final class OnboardingViewController: UIViewController {
 		button.tintColor = .Onboarding.skipTitle
 		button.backgroundColor = .Onboarding.skipBackground
 		button.layer.cornerRadius = 8
-		
 		button.addTarget(self, action: #selector(navigateToLogin), for: .primaryActionTriggered)
 		
 		return button
@@ -120,10 +99,13 @@ final class OnboardingViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
 		setupConstraints()
+        setupBindings()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -135,9 +117,9 @@ final class OnboardingViewController: UIViewController {
 		super.viewWillDisappear(animated)
 		navigationController?.setNavigationBarHidden(false, animated: animated)
 	}
-}
-
-extension OnboardingViewController {
+    
+    // MARK: - UI configuration methods
+    
 	private func setupViews() {
 		view.addSubviews(collectionView, pageControl, skipButton, startButton)
 	}
@@ -162,20 +144,28 @@ extension OnboardingViewController {
 			make.height.equalTo(56)
 		}
 	}
-}
+    
+    private func setupBindings() {
+        viewModel
+            .$items
+            .receive(on: DispatchQueue.main)
+            .sink { items in
+                self.collectionView.reloadData()
+                self.pageControl.numberOfPages = items.count
+            }
+            .store(in: &cancellables)
+    }
 
-extension OnboardingViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+    
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return items.count
+        return viewModel.itemsCount()
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		guard let cell = collectionView.dequeueReusableCell(cellType: OnboardingCell.self, for: indexPath) else {
-			fatalError("Cell type cast error!")
-		}
-		
-		cell.setData(withItem: items[indexPath.row])
-		
+		let cell = collectionView.dequeueReusableCell(cellType: OnboardingCell.self, for: indexPath)!
+        let currentItem = viewModel.item(for: indexPath.row)
+		cell.configure(for: currentItem)
 		return cell
 	}
 	
@@ -186,7 +176,7 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
 		
 		pageControl.setPage(currentIndex)
 		
-		if currentIndex == items.count - 1 {
+        if currentIndex == viewModel.itemsCount() - 1 {
 			UIView.animate(withDuration: 0.15) {
 				self.skipButton.layer.opacity = 0
 				self.startButton.layer.opacity = 1
@@ -198,9 +188,9 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
 			}
 		}
 	}
-}
-
-extension OnboardingViewController {
+    
+    // MARK: - Actions
+    
 	@objc
 	private func navigateToLogin() {
         coordinator?.showLogin()

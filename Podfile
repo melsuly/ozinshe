@@ -10,6 +10,7 @@ target 'Ozinshe' do
 		pod 'SwiftyJSON'
 		pod 'KeychainSwift'
 		pod 'PanModal'
+    pod 'Swinject'
 end
 
 post_install do |installer|
